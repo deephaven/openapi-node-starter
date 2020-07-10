@@ -10,5 +10,5 @@ Getting started with OpenAPI and NodeJS
 ## File Descriptions
 - app.js - Main file which creates a connection
 - openapiIncludeAsync.js - Function to asynchronously include the latest version of irisapi.nocache.js from web server
-- openapiPolyfill.js - Adds some missing Event classes for irisapi with Node
-- irisapi.nocache.js (not tracked) - Downloaded by irisapiIncludeAsync and contains the class definitions for using the API
+- openapiPolyfill.js - Adds some missing Event classes for OpenAPI with Node
+- irisapi.nocache.js (not tracked) - Downloaded by openapiIncludeAsync and contains the class definitions for using the API

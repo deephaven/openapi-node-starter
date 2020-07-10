@@ -5,6 +5,7 @@ const fs = require('fs');
 require("./openapiPolyfill.js");
 
 module.exports = (url, fileName='irisapi.nocache.js') => {
+    global.location = new URL(url);
     return new Promise((resolve, reject) => {
         const apiFile = fs.createWriteStream(`./${fileName}`);
         const request = https.get(url, response => {

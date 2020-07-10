@@ -1,6 +1,6 @@
 const irisInclude = require('./openapiIncludeAsync');
 
-const host = 'server.com'; // Deephaven server URL
+const host = 'server.name'; // Deephaven server URL
 const credentials = { username: 'user', token: 'pass', type: 'password' };
 const apiFileName = 'irisapi.nocache.js'; // Only change if the file name changes on the server
 let client;
@@ -33,35 +33,5 @@ async function start() {
     });
   } catch(err) {
     console.error(err);
-  }
-}
-
-class PQAlertMonitor {
-  constructor(client) {
-    this.client = client;
-    this.client.addEventListener(iris.Client.EVENT_CONFIG_UPDATED, e => this.onConfigUpdate(e));
-  }
-
-  /**
-   * Sends message on any persistent query error or failure
-   */
-  async onConfigUpdate(event) {
-    console.log('Got config updated event', event.detail.name, event.detail.status);
-    
-    switch (event.detail.status) {
-      case 'Disconnected':
-      case 'Error':
-      case 'Failed': {
-        let info = await this.messenger.sendMail({
-          from: 'Test Failure <test@failure.com>',
-          to: 'failure@notifications.com',
-          subject: `[Deephaven] PQ ${event.detail.name} ${event.detail.status}`,
-          text: `Name: ${event.detail.name}\nSerial: ${event.detail.serial}\nHost: ${host}`
-        });
-
-        console.log(`Preview URL: ${nodemailer.getTestMessageUrl(info)}`);
-        break;
-      }
-    }
   }
 }

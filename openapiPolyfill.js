@@ -16,7 +16,6 @@ class CustomEvent extends Event {
 
 global.self = global;
 global.window = global;
-global.location = new URL('https://localhost:9999/testing'); // Temp URL so location exists globally
 global.Event = Event;
 global.CustomEvent = CustomEvent;
 global.WebSocket = require('ws');
