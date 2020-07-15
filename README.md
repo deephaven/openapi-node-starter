@@ -3,9 +3,10 @@
 Getting started with OpenAPI and NodeJS
 
 ## Setup Instructions
-1. Install NodeJS v12+, then run the following 2 commands
+1. Install NodeJS v12+
 2. `npm install`
-3. `npm start`
+3. Set the server name and credentials near the top of app.js
+4. `npm start`
 
 ## File Descriptions
 - app.js - Main file which creates a connection
