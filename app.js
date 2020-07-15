@@ -1,4 +1,4 @@
-const irisInclude = require('./openapiIncludeAsync');
+const openapiInclude = require('./openapiIncludeAsync');
 
 const host = 'server.name'; // Deephaven server URL
 const credentials = { username: 'user', token: 'pass', type: 'password' };
@@ -8,7 +8,7 @@ let client;
 start();
 async function start() {
   try {
-    await irisInclude(`https://${host}/irisapi/${apiFileName}`, apiFileName);
+    await openapiInclude(`https://${host}/irisapi/${apiFileName}`, apiFileName);
     const wsUrl = `wss://${host}/socket`;
 
     client = new iris.Client(wsUrl);
