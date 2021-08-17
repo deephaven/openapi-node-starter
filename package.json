@@ -4,7 +4,7 @@
   "description": "An example Node Client that connects and logs in",
   "main": "app.js",
   "dependencies": {
-    "ws": "^7.3.0"
+    "ws": "^7.4.6"
   },
   "devDependencies": {},
   "scripts": {
